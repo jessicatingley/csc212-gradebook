@@ -2,6 +2,9 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
+#include "Individual.h"
+#include "Category.h"
+#include "Course.h"
 
 std::vector<std::vector<int>> FileToVector(std::string file_name){
     //Opens the file for reading
@@ -66,5 +69,18 @@ int main(int argc, char* argv[]){
     //Command = which method of the specified class the user is looking to use
     std::string command = argv[4];
 
+    //Make each variable completely uppercase
+    std::transform(type.begin(), type.end(), type.begin(), ::toupper);
+    std::transform(category.begin(), category.end(), category.begin(), ::toupper);
+    std::transform(command.begin(), command.end(), command.begin(), ::toupper);
+
+    //Use case for category class
+    if(type == "CATEGORY"){
+        Category use_category(category, command, grades);
+        if(command == "ALLGRADES"){
+            std::cout << use_category.AllGrades(category, grades) << std::endl;
+        }
+        std::cout<< use_category.Total(category, grades) << std::endl;
+    }
     return 0;
 }
