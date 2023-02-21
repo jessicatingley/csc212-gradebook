@@ -59,6 +59,11 @@ std::ofstream VectorToFile(const std::vector<std::vector<int>>& grade_vec, const
 
 int main(int argc, char* argv[]){
     std::vector<std::vector<int>> grades = FileToVector(argv[1]);
+    std::vector<std::vector<std::string>> assignment_names = {
+            {"Lab 1", "Lab 2", "Lab 3", "Lab 4", "Lab 5", "Lab 6", "Lab 7", "Lab 8", "Lab 9", "Lab 10", "Lab 11", "Lab 12", "Lab 13", "Lab 14"},
+            {"Assignment 1", "Assignment 2", "Assignment 3", "Assignment 4"},
+            {"Review Project", "Final Project"},
+            {"Final Exam"}};
 
     //Type = class the user is looking to use
     std::string type = argv[2];
