@@ -16,7 +16,7 @@ private:
 
 public:
     Individual(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names);
-    int GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names);
+    int GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades);
 };
 
 #endif //CSC212_GRADEBOOK_INDIVIDUAL_H
