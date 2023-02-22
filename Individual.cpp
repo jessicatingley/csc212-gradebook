@@ -1,8 +1,8 @@
 #include "Individual.h"
 #include <iostream>
 
-Individual::Individual(std::string category, std::string deliverable, std::vector<std::vector<int>> grades)
-        : category(category), deliverable(deliverable), grades(grades){}
+Individual::Individual(std::string category, std::string deliverable, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names)
+        : category(category), deliverable(deliverable), grades(grades), assignment_names(assignment_names){}
 
 int Individual::DetermineCategory(std::string category) {
 //    enum category_type{
@@ -19,12 +19,16 @@ int Individual::DetermineCategory(std::string category) {
 
 }
 
-int Individual::GetGrade(std::string category, std::string deliverable, std::vector<std::vector<int>> grades) {
-
+// Get index of individual deliverable from assignment_names
+int Individual::GetIndex(std::string category, std::string deliverable, std::vector<std::vector<std::string>> assignment_names) {
     for(int i = 0; i < grades[DetermineCategory(category)].length(); i++) {
-        if(deliverable == grades[DetermineCategory(category)][i].first) {
-            return grades[DetermineCategory(category)][i].second;
+        if(deliverable == assignment_names[DetermineCategory(category)][i]) {
+            return i;
         }
     }
+}
 
+// Get grade of individual deliverable from grades
+int Individual::GetGrade(std::string category, std::string deliverable, std::vector<std::vector<std::string>> grades) {
+     return grades[DetermineCategory(category)][GetIndex(category, deliverable, assignment_names)]
 }
