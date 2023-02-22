@@ -1,11 +1,13 @@
 
+
 #ifndef CSC212_GRADEBOOK_INDIVIDUAL_H
 #define CSC212_GRADEBOOK_INDIVIDUAL_H
 
 #include <iostream>
 #include <vector>
 
-class Individual {
+class Individual
+{
 private:
     std::string category;
     std::string command;
@@ -19,4 +21,4 @@ public:
     int GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades);
 };
 
-#endif //CSC212_GRADEBOOK_INDIVIDUAL_H
+#endif // CSC212_GRADEBOOK_INDIVIDUAL_H
