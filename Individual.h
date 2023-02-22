@@ -8,13 +8,15 @@
 class Individual {
 private:
     std::string category;
-    std::string deliverable;
+    std::string command;
     std::vector<std::vector<int>> grades;
+    std::vector<std::vector<std::string>> assignment_names;
     int DetermineCategory(std::string category);
+    int GetIndex(std::string category, std::string command, std::vector<std::vector<std::string>> assignment_names);
 
 public:
-    Individual(std::string category, std::string deliverable, std::vector<std::vector<int>> grades);
-    int GetGrade(std::string category, std::string deliverable, std::vector<std::vector<int>> grades);
+    Individual(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names);
+    int GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names);
 };
 
 #endif //CSC212_GRADEBOOK_INDIVIDUAL_H
