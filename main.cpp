@@ -87,5 +87,13 @@ int main(int argc, char* argv[]){
         }
         std::cout<< use_category.Total(category, grades) << std::endl;
     }
+    
+    //Use case for individual class
+    if(type == "INDIVIDUAL") {
+        Individual use_individual(category, command, grades, assignment_names);
+        std::cout << "Deliverable Name: " << command << std::endl;
+        std::cout << command << "Grade: " << use_individual.GetGrade(category, command, grades) << std::endl;
+    }
+    
     return 0;
 }

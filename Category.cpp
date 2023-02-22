@@ -32,5 +32,18 @@ double Category::Total(std::string category, std::vector<std::vector<int>> grade
     for(const auto grade : grades[DetermineCategory(category)]){
         total += grade;
     }
+    
+/*    
+// How to take in deliverable name in CLA ?
+// Change implementation from pairs to assignment name vector
+int Category::GetGrade(std::string category, std::string deliverable, std::vector<std::vector<int>> grades) {
+    for(int i = 0; i < grades[DetermineCategory(category)].length(); i++) {
+        if(deliverable == grades[DetermineCategory(category)][i].first) {
+            return grades[DetermineCategory(category)][i].second;
+        }
+    }
+} 
+*/
+    
     return total;
 }
