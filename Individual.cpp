@@ -1,18 +1,10 @@
 #include "Individual.h"
-#include "Individual.h"
 #include <iostream>
 
 Individual::Individual(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names)
     : category(category), command(command), grades(grades), assignment_names(assignment_names) {}
 
 int Individual::DetermineCategory(std::string category){
-    //    enum category_type{
-    //        LABS,
-    //        ASSIGNMENTS,
-    //        PROJECTS,
-    //        EXAM
-    //    };
-
     if (category == "LABS")
         return 0;
     if (category == "ASSIGNMENTS")
@@ -21,23 +13,18 @@ int Individual::DetermineCategory(std::string category){
         return 2;
     if (category == "EXAMS")
         return 3;
-    return 4;
 }
 
 // Get index of individual deliverable (command) from assignment_names
-int Individual::GetIndex(std::string category, std::string command, std::vector<std::vector<std::string>> assignment_names)
-{
-    for (int i = 0; i < size(grades[DetermineCategory(category)]); i++)
-    {
-        if (command == assignment_names[DetermineCategory(category)][i])
-        {
+int Individual::GetIndex(std::string category, std::string command, std::vector<std::vector<std::string>> assignment_names){
+    for (int i = 0; i < grades[DetermineCategory(category)].size(); i++){
+        if (command == assignment_names[DetermineCategory(category)][i]){
             return i;
         }
     }
 }
 
 // Get grade of individual deliverable (command) from grades
-int Individual::GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades)
-{
+int Individual::GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades){
     return grades[DetermineCategory(category)][GetIndex(category, command, assignment_names)];
 }

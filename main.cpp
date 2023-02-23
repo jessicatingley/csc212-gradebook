@@ -2,6 +2,7 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
+#include <cassert>
 #include "Individual.h"
 #include "Category.h"
 #include "Course.h"
@@ -78,6 +79,14 @@ int main(int argc, char* argv[]){
     std::transform(type.begin(), type.end(), type.begin(), ::toupper);
     std::transform(category.begin(), category.end(), category.begin(), ::toupper);
     std::transform(command.begin(), command.end(), command.begin(), ::toupper);
+
+    //Assert that the given type is valid
+    std::vector<std::string> valid_types = {"INDIVIDUAL", "CATEGORY", "COURSE"};
+    assert(std::find(valid_types.begin(), valid_types.end(), type) != valid_types.end());
+
+    //Assert that the given category is valid
+    std::vector<std::string> valid_categories = {"LABS", "ASSIGNMENTS", "PROJECTS", "EXAMS"};
+    assert(std::find(valid_categories.begin(), valid_categories.end(), category) != valid_categories.end());
 
     //Use case for category class
     if(type == "CATEGORY"){
