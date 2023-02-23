@@ -7,16 +7,16 @@
 #include <cassert>
 
 std::vector<std::vector<std::string>> assignment_names = {
-        {"Lab 1", "Lab 2", "Lab 3", "Lab 4", "Lab 5", "Lab 6", "Lab 7", "Lab 8", "Lab 9", "Lab 10", "Lab 11", "Lab 12"},
-        {"Assignment 1", "Assignment 2", "Assignment 3", "Assignment 4"},
-        {"Review Project", "Final Project"},
-        {"Final Exam"}};
+        {"Lab1", "Lab2", "Lab3", "Lab4", "Lab5", "Lab6", "Lab7", "Lab8", "Lab9", "Lab10", "Lab11", "Lab12"},
+        {"Assignment1", "Assignment2", "Assignment3", "Assignment4"},
+        {"ReviewProject", "FinalProject"},
+        {"Exam"}};
 
 // Test Individual Class
 void TestIndivDetermineCategory(){
     std::string category = "LABS";
     std::string command = "LAB1";
-    std::vector<std::vector<int>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    std::vector<std::vector<double>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                             {0, 0, 0, 0},
                                             {0, 0},
                                             {0}};
@@ -36,6 +36,10 @@ void TestIndivDetermineCategory(){
     assert(test_individual3.DetermineCategory(category) == 3);
 };
 
+void TestIndividualGetIndex(){
+
+}
+
 void TestIndividualGrade(){
 
 };
@@ -44,7 +48,7 @@ void TestIndividualGrade(){
 void TestCategoryDetermineCategory(){
     std::string category = "LABS";
     std::string command = "LAB1";
-    std::vector<std::vector<int>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    std::vector<std::vector<double>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                             {0, 0, 0, 0},
                                             {0, 0},
                                             {0}};

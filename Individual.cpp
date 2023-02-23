@@ -1,7 +1,7 @@
 #include "Individual.h"
 #include <iostream>
 
-Individual::Individual(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names)
+Individual::Individual(std::string category, std::string command, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names)
     : category(category), command(command), grades(grades), assignment_names(assignment_names) {}
 
 int Individual::DetermineCategory(std::string category){
@@ -25,6 +25,6 @@ int Individual::GetIndex(std::string category, std::string command, std::vector<
 }
 
 // Get grade of individual deliverable (command) from grades
-int Individual::GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades){
+double Individual::GetGrade(std::string category, std::string command, std::vector<std::vector<double>> grades){
     return grades[DetermineCategory(category)][GetIndex(category, command, assignment_names)];
 }
