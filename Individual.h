@@ -18,6 +18,7 @@ private:
     int GetIndex(std::string category, std::string command, std::vector<std::vector<std::string>> assignment_names);
 
 public:
+    friend void TestIndivDetermineCategory();
     Individual(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names);
     // Return grade at deliverable index
     int GetGrade(std::string category, std::string command, std::vector<std::vector<int>> grades);
