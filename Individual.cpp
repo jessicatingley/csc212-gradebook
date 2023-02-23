@@ -5,8 +5,7 @@
 Individual::Individual(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names)
     : category(category), command(command), grades(grades), assignment_names(assignment_names) {}
 
-int Individual::DetermineCategory(std::string category)
-{
+int Individual::DetermineCategory(std::string category){
     //    enum category_type{
     //        LABS,
     //        ASSIGNMENTS,
@@ -20,8 +19,9 @@ int Individual::DetermineCategory(std::string category)
         return 1;
     if (category == "PROJECTS")
         return 2;
-    if (category == "EXAM")
+    if (category == "EXAMS")
         return 3;
+    return 4;
 }
 
 // Get index of individual deliverable (command) from assignment_names
