@@ -57,6 +57,16 @@ std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, co
     return out_file;
 }
 
+
+/* ------------------------------------------------------------------------------
+ * Function: main
+ * Important Points:
+ *
+ * Type = class the user is looking to use
+ * Category = category the user wants grades from (labs, assignments, etc)
+ * Command = which method of the specified class the user is looking to use
+ ------------------------------------------------------------------------------ */
+
 int main(int argc, char* argv[]){
     std::vector<std::vector<double>> grades = FileToVector(argv[1]);
     std::vector<std::vector<std::string>> assignment_names = {
@@ -69,27 +79,26 @@ int main(int argc, char* argv[]){
                                                       "ASSIGNMENT3", "ASSIGNMENT4", "REVIEWPROJECT", "FINALPROJECT",
                                                       "EXAM"};
 
-    //Type = class the user is looking to use
     std::string type = argv[2];
-
-    //Category = category the user wants grades from (labs, assignments, etc)
     std::string category = argv[3];
-
-    //Command = which method of the specified class the user is looking to use
     std::string command = argv[4];
 
-    //Make each variable completely uppercase
     std::transform(type.begin(), type.end(), type.begin(), ::toupper);
     std::transform(category.begin(), category.end(), category.begin(), ::toupper);
     std::transform(command.begin(), command.end(), command.begin(), ::toupper);
 
-    //Assert that the given type is valid
-    std::vector<std::string> valid_types = {"INDIVIDUAL", "CATEGORY", "COURSE"};
+    std::vector<std::string> valid_types = {"INDIVIDUAL", "CATEGORY", "COURSE", "UPDATE"};
     assert(std::find(valid_types.begin(), valid_types.end(), type) != valid_types.end());
 
-    //Assert that the given category is valid
     std::vector<std::string> valid_categories = {"LABS", "ASSIGNMENTS", "PROJECTS", "EXAMS"};
     assert(std::find(valid_categories.begin(), valid_categories.end(), category) != valid_categories.end());
+
+    if(type == "UPDATE"){
+        int new_grade = std::stoi(argv[5]);
+        Individual update_grade(category, command, grades, assignment_names);
+        grades[update_grade.DetermineCategory(category)][update_grade.GetIndex(category, command, assignment_names)] = new_grade;
+        VectorToFile(grades, argv[1]);
+    }
 
     //Use case for category class
     if(type == "CATEGORY"){

@@ -11,15 +11,15 @@ private:
     std::string command; // Deliverable
     std::vector<std::vector<double>> grades;
     std::vector<std::vector<std::string>> assignment_names; // Vector of deliverable names
-    int DetermineCategory(std::string category); // Implimentation from category class
-    // Find index of given deliverable
-    int GetIndex(std::string category, std::string command, std::vector<std::vector<std::string>> assignment_names);
 
 public:
     friend void TestIndivDetermineCategory();
     friend void TestIndividualGetIndex();
     Individual(std::string category, std::string command, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names);
     // Return grade at deliverable index
+    int DetermineCategory(std::string category); // Implementation from category class
+    // Find index of given deliverable
+    int GetIndex(std::string category, std::string command, std::vector<std::vector<std::string>> assignment_names);
     double GetGrade(std::string category, std::string command, std::vector<std::vector<double>> grades);
 };
 
