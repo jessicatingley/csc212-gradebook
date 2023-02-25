@@ -7,33 +7,32 @@
 #include "Category.h"
 #include "Course.h"
 
+
+/* ------------------------------------------------------------------------------
+ * Function: FileToVector
+ * Description:
+ *
+ * Input: Name of the file to be read as a string
+ * Output: 2D vector of doubles
+ * Process: File is iterated over line by line and each item in the line is
+ *          tokenized and pushed to a temporary vector. At the end of this line,
+ *          the temporary vector is pushed to the vector being returned.
+ ------------------------------------------------------------------------------ */
 std::vector<std::vector<double>> FileToVector(std::string file_name){
-    //Opens the file for reading
     std::ifstream file(file_name);
-
-    //Creates a string to hold each line in temporarily
     std::string str;
-
-    //Creates a vector to store data in
     std::vector<std::vector<double>> new_file;
 
     //Iterates over the file, storing one line at a time into 'str'
     while(std::getline(file, str)){
-        //Temporary 1D vector of int
         std::vector<double> new_row;
-
-        //Create a stringstream object with our line of integers from the file
         std::istringstream ss(str);
-
-        //Int that will hold our extracted value from the string
         double token;
 
         //While there are still numbers in this string, extract them
         while(ss >> token){
-            //Push numbers into temp vector
             new_row.push_back(token);
         }
-        //Push completed row into 2D vector
         new_file.push_back(new_row);
     }
     return new_file;
@@ -61,10 +60,14 @@ std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, co
 int main(int argc, char* argv[]){
     std::vector<std::vector<double>> grades = FileToVector(argv[1]);
     std::vector<std::vector<std::string>> assignment_names = {
-            {"Lab1", "Lab2", "Lab3", "Lab4", "Lab5", "Lab6", "Lab7", "Lab8", "Lab9", "Lab10", "Lab11", "Lab12"},
-            {"Assignment1", "Assignment2", "Assignment3", "Assignment4"},
-            {"ReviewProject", "FinalProject"},
-            {"Exam"}};
+            {"LAB1", "LAB2", "LAB3", "LAB4", "LAB5", "LAB6", "LAB7", "LAB8", "LAB9", "LAB10", "LAB11", "LAB12"},
+            {"ASSIGNMENT1", "ASSIGNMENT2", "ASSIGNMENT3", "ASSIGNMENT4"},
+            {"REVIEWPROJECT", "FINALPROJECT"},
+            {"EXAM"}};
+    std::vector<std::string> assignment_names_flat = {"LAB1", "LAB2", "LAB3", "LAB4", "LAB5", "LAB6", "LAB7", "LAB8",
+                                                      "LAB9", "LAB10", "LAB11", "LAB12", "ASSIGNMENT1", "ASSIGNMENT2",
+                                                      "ASSIGNMENT3", "ASSIGNMENT4", "REVIEWPROJECT", "FINALPROJECT",
+                                                      "EXAM"};
 
     //Type = class the user is looking to use
     std::string type = argv[2];
@@ -99,8 +102,12 @@ int main(int argc, char* argv[]){
     
     //Use case for individual class
     if(type == "INDIVIDUAL") {
-        //assert(std::find(assignment_names.begin(), assignment_names.end(), command) != assignment_names.end());
+        assert(std::find(assignment_names_flat.begin(), assignment_names_flat.end(), command) != assignment_names_flat.end());
         Individual use_individual(category, command, grades, assignment_names);
+        if(use_individual.GetGrade(category, command, grades) == 999){
+            std::cout << "This grade has not been entered yet" << std::endl;
+            return 0;
+        }
         std::cout << "Deliverable Name: " << command << std::endl;
         std::cout << command << "Grade: " << use_individual.GetGrade(category, command, grades) << std::endl;
     }
