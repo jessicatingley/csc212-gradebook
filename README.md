@@ -11,7 +11,7 @@ The application utilizes 3 classes - Individual, Category, and Course to perform
 
 The Individual class is used to return the name and grade of an individual deliverable from the course.
   
-The Category class is used to return all grades from the given category and the category total.
+The Category class is used to return all grades from the given category or the category total.
   
 The Course class is used to return each of the following: 
   - All grades within their respective categories and the course overall
@@ -25,10 +25,28 @@ The Course class is used to return each of the following:
 ## Compilation Instructions
     - Can include screenshots to show examples of the program running (SS of how to compile, SS of example input file)
     
-## Runtime Instructions
-How to use the program?
-The necessary command line arguments for utilizing the Individual class will be input as follows:
-    <input file name> <class type> <assignment category> <assignment name>
+## Runtime Instruction
+The first command line argument should ***always*** be the text file.  
+The necessary command line arguments for utilizing the **Individual class** will be input as follows:  
+    ```
+    $ ./prog file_name.txt INDIVIDUAL CATEGORY_OF_ASSIGNMENT ASSIGNMENT_NAME  
+    ```  
+    Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+    - `LABS`   
+    - `ASSIGNMENTS`     
+    - `PROJECTS`     
+    - `EXAMS`      
+    Examples of valid input for `ASSIGNMENT_NAME`:     
+    - `LAB1`   
+    - `ASSIGNMENT3`    
+    - `REVIEWPROJECT`    
+    - `FINALPROJECT`   
+    - `EXAM`   
+    Important notes:     
+    - `CATGORY_OF_ASSIGNMENT` ***must*** correspond with `ASSIGNMENT_NAME`   
+      - I.e. entering `LABS` for `CATEGORY_OF_ASSIGNMENT` and `ASSIGNMENT3` for `ASSIGNMENT_NAME` would result in an incorrect grade          being returned.    
+    - No spaces should be left in input for `ASSIGNMENT_NAME`    
+    - If input is invalid, the program will break with an assert.   
 The necessary command line arguments for utilizing the Category class will be input as follows:
     <input file name> <class type> <grade category> <output command>
 The necessary command line arguments for utilizing the Course class will be input as follows:
