@@ -1,5 +1,6 @@
 #include "Individual.h"
 #include <iostream>
+#include <vector>
 
 Individual::Individual(std::string category, std::string command, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names)
     : category(category), command(command), grades(grades), assignment_names(assignment_names) {}
