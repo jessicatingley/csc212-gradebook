@@ -21,6 +21,7 @@ The Course class is used to return any of the following:
 ## Planning
 ### Pseudocode / Flowcharts:
     - Code planning evidence here
+    - Add imgs of initial plnning for Individual and Category Class and Input File
     
 ## Compilation Instructions
     - Can include screenshots to show examples of the program running (SS of how to compile, SS of example input file)
@@ -59,6 +60,7 @@ Written tests for the application. Examples of how to run these tests.
 
 #### Credits:
 Project created by Brynne Wright, Jessica Tingley, and Alex Sampalis.
+Who did what... ? Expln
 
 #### License:
 [License]
