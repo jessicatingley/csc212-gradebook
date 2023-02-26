@@ -120,6 +120,37 @@ int main(int argc, char* argv[]){
         std::cout << "Deliverable Name: " << command << std::endl;
         std::cout << command << "Grade: " << use_individual.GetGrade(category, command, grades) << std::endl;
     }
+ 
+ // use case for course class
+    if (type == "COURSE")
+    {
+        // case 1 (all grades for every category and course overall totals)
+        // command == TOTAL
+        Course use_course(category, command, grades, assignment_names);
+        if (command == "TOTAL")
+        {
+            // return category, assignment name, grade
+            // return course total
+            std::cout << use_course.TOTAL(category, grades, assignment_names) << std::endl;
+        }
+        // case 2 (catagory totals and course overall total)
+        // command == catagory_total
+        if (command == "CATEGORY_TOTAL")
+        {
+            // return category total
+            // return course total
+            std::cout << use_course.CATEGORY_TOTAL(category, grades, assignment_names) << std::endl;
+        }
+
+        // case 3 (only course overall)
+        // command == course_total
+        if (command == "COURSE_TOTAL")
+        {
+            // return course total
+            std::cout << use_course.COURSE_TOTAL(category, grades, assignment_names) << std::endl;
+        }
+
+    }
     
     return 0;
 }
