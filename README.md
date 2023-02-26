@@ -13,7 +13,7 @@ The Individual class is used to return the name and grade of an individual deliv
   
 The Category class is used to return all grades from the given category or the category total.
   
-The Course class is used to return each of the following: 
+The Course class is used to return any of the following: 
   - All grades within their respective categories and the course overall
   - Only category totals and the course overall
   - Only the course overall
@@ -44,13 +44,13 @@ The necessary command line arguments for utilizing the **Individual class** will
     - `EXAM`   
     Important notes:     
     - `CATGORY_OF_ASSIGNMENT` ***must*** correspond with `ASSIGNMENT_NAME`   
-      - I.e. entering `LABS` for `CATEGORY_OF_ASSIGNMENT` and `ASSIGNMENT3` for `ASSIGNMENT_NAME` would result in an incorrect grade          being returned.    
+      - I.e. entering `LABS` for `CATEGORY_OF_ASSIGNMENT` and `ASSIGNMENT3` for `ASSIGNMENT_NAME` would result in an incorrect grade being returned.    
     - No spaces should be left in input for `ASSIGNMENT_NAME`    
     - If input is invalid, the program will break with an assert.   
 The necessary command line arguments for utilizing the Category class will be input as follows:
-    <input file name> <class type> <grade category> <output command>
+    <input file name> <class type> <assignment category> <output command>
 The necessary command line arguments for utilizing the Course class will be input as follows:
-    <input file name> <class type> <grade category> <output command>
+    <input file name> <class type> <assignment category> <output command>
 
 ## Sample Input/Output
     -Include screenshots with brief explanations of the images used
