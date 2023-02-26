@@ -104,9 +104,9 @@ int main(int argc, char* argv[]){
     if(type == "CATEGORY"){
         Category use_category(category, command, grades);
         if(command == "ALLGRADES"){
-            std::cout << use_category.AllGrades(category, grades) << std::endl;
+            std::cout << "Your grades for " << category << " are " << use_category.AllGrades(category, grades) << std::endl;
         }
-        std::cout<< use_category.Total(category, grades) << std::endl;
+        else std::cout<< "Your category total for " << category << " is " << use_category.Total(category, grades) << std::endl;
     }
     
     //Use case for individual class

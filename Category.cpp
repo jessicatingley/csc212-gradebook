@@ -15,7 +15,8 @@ int Category::DetermineCategory(std::string category) {
 std::string Category::AllGrades(std::string category, std::vector<std::vector<double>> grades) {
     std::string all_grades = " ";
     for(const auto grade : grades[DetermineCategory(category)]){
-        all_grades += std::to_string(grade) + " ";
+        if(grade == 999) all_grades += "Grade Not Entered ";
+        else all_grades += std::to_string(grade) + " ";
     }
     return all_grades;
 }
@@ -23,7 +24,7 @@ std::string Category::AllGrades(std::string category, std::vector<std::vector<do
 double Category::Total(std::string category, std::vector<std::vector<double>> grades) {
     double total = 0;
     for(const auto grade : grades[DetermineCategory(category)]){
-        total += grade;
+        if(grade != 999) total += grade;
     }
     return total;
 }
