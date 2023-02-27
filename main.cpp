@@ -168,9 +168,9 @@ int main(int argc, char* argv[]){
  // use case for course class
     if (type == "COURSE"){
         Course use_course(category, command, grades, assignment_names);
-        if (command == "TOTAL") std::cout << use_course.TOTAL(category, grades, assignment_names) << std::endl;
-        if (command == "CATEGORYTOTAL") std::cout << use_course.CATEGORY_TOTAL(category, grades) << std::endl;
-        if (command == "COURSETOTAL") std::cout << "Course total: " << use_course.COURSE_TOTAL(category, grades) << " out of 1000 possible points" << std::endl;
+        if (command == "TOTAL") std::cout << use_course.TOTAL(grades) << std::endl;
+        if (command == "CATEGORYTOTAL") std::cout << use_course.CATEGORY_TOTAL(grades) << std::endl;
+        if (command == "COURSETOTAL") std::cout << "Course total: " << use_course.COURSE_TOTAL(grades) << " out of 1000 possible points" << std::endl;
     }
     return 0;
 }

@@ -4,18 +4,20 @@
 #include <vector>
 #include <algorithm>
 
-//------------------------------------------------------------------
-
-//------------------------------------------------------------------
-
 Course::Course(std::string category, std::string command, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names)
     : category(category), command(command), grades(grades), assignment_names(assignment_names) {}
 
-// case 1 (all grades for every category and course overall totals)
-// command == TOTAL
 
-// return labs, assignments, projects, exam
-std::string Course::TOTAL(std::string category, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names){
+/* ------------------------------------------------------------------------------
+ * Method: Total
+ * Description:
+ *
+ * Input: All grades sorted by category and in chronological order (2D vector)
+ * Output: All grades for each category (string)
+ * Process: Each grade in each row of the grades vector is pushed to a string.
+ *          Rows are labeled with their associated category.
+ ------------------------------------------------------------------------------ */
+std::string Course::TOTAL(std::vector<std::vector<double>> grades){
     std::string all_grades = "";
 
     for(int i = 0; i <= 3; i++){
@@ -54,11 +56,20 @@ std::string Course::TOTAL(std::string category, std::vector<std::vector<double>>
     }
     return all_grades;
 }
-// case 2 (catagory totals and course overall total)
-// command == catagory_total
 
-// return catagory totals
-std::string Course::CATEGORY_TOTAL(std::string category, std::vector<std::vector<double>> grades){
+
+
+/* ------------------------------------------------------------------------------
+ * Method: CategoryTotal
+ * Description:
+ *
+ * Input: All grades sorted by category and in chronological order (2D vector)
+ * Output: Total of all grades in each category (string)
+ * Process: Each grade in each row of the grades vector is added to a total.
+ *          Rows are labeled with their associated category and the associated
+ *          total is displayed with this label.
+ ------------------------------------------------------------------------------ */
+std::string Course::CATEGORY_TOTAL(std::vector<std::vector<double>> grades){
     std::string output = "";
     for (int i = 0; i <= 3; i++){
         double total = 0;
@@ -108,15 +119,18 @@ std::string Course::CATEGORY_TOTAL(std::string category, std::vector<std::vector
     return output;
 }
 
-// case 3 (only course overall)
-// command == course_total
-// return course total
-double Course::COURSE_TOTAL(std::string category, std::vector<std::vector<double>> grades){
+/* ------------------------------------------------------------------------------
+ * Method: CourseTotal
+ * Description:
+ *
+ * Input: All grades sorted by category and in chronological order (2D vector)
+ * Output: Total number of points for the course (double)
+ * Process: Each vector within the 2D vector is iterated over. Each grade in the
+ *          inner vector is added to a running total for the course.
+ ------------------------------------------------------------------------------ */
+double Course::COURSE_TOTAL(std::vector<std::vector<double>> grades){
     double total = 0;
-
-    // rows
     for (const auto category : grades){
-        // columns
         for (const auto grade : category){
             if (total != 999) total += grade;
         }

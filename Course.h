@@ -17,15 +17,15 @@ public:
     std::string AllGrades(std::string category, std::vector<std::vector<double>> grades);
     // case 1 (all grades for every category and course overall totals)
     // command == TOTAL
-    std::string TOTAL(std::string category, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names);
+    std::string TOTAL(std::vector<std::vector<double>> grades);
 
     // case 2 (catagory totals and course overall total)
     // command == catagory_total
-    std::string CATEGORY_TOTAL(std::string category, std::vector<std::vector<double>> grades);
+    std::string CATEGORY_TOTAL(std::vector<std::vector<double>> grades);
 
     // case 3 (only course overall)
     // command == course_total
-    double COURSE_TOTAL(std::string category, std::vector<std::vector<double>> grades);
+    double COURSE_TOTAL(std::vector<std::vector<double>> grades);
 };
 
 #endif
