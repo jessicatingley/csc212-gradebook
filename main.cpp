@@ -2,68 +2,13 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
-#include <cassert>
 #include "Individual.h"
 #include "Category.h"
 #include "Course.h"
 
+std::vector<std::vector<double>> FileToVector(std::string file_name);
+std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, const std::string& file_name);
 
-/* ------------------------------------------------------------------------------
- * Function: FileToVector
- * Description:
- *
- * Input: Name of the given file to be read from (string)
- * Output: Grades read in from the file (2D vector)
- * Process: File is iterated over line by line and each item in the line is
- *          tokenized and pushed to a temporary vector. At the end of this line,
- *          the temporary vector is pushed to the vector being returned.
- ------------------------------------------------------------------------------ */
-std::vector<std::vector<double>> FileToVector(std::string file_name){
-    std::ifstream file(file_name);
-    std::string str;
-    std::vector<std::vector<double>> new_file;
-
-    //Iterates over the file, storing one line at a time into 'str'
-    while(std::getline(file, str)){
-        std::vector<double> new_row;
-        std::istringstream ss(str);
-        double token;
-
-        //While there are still numbers in this string, extract them
-        while(ss >> token){
-            new_row.push_back(token);
-        }
-        new_file.push_back(new_row);
-    }
-    return new_file;
-}
-
-/* ------------------------------------------------------------------------------
- * Function: VectorToFile
- * Description:
- *
- * Input: - Grades from each category in chronological order (2D vector)
- *        - Name of given file to be written to (string)
- * Output: Output file stream
- * Process: Each vector within the 2D vector is iterated over. Each item in the
- *          inner vectors is output to the file with a space following it. At
- *          the end of the inner vector, a newline is inserted and the next inner
- *          vector is iterated over.
- ------------------------------------------------------------------------------ */
-std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, const std::string& file_name){
-    std::ofstream out_file(file_name);
-
-    //Iterate over outer dimension
-    for(std::vector<std::vector<double>>::const_iterator row = grade_vec.begin(); row != grade_vec.end(); row++){
-
-        //Iterator over inner dimension
-        for(std::vector<double>::const_iterator col = row->begin(); col != row->end(); col++){
-            out_file << *col << " ";
-        }
-        out_file << "\n";
-    }
-    return out_file;
-}
 
 
 /* ------------------------------------------------------------------------------
@@ -76,7 +21,6 @@ std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, co
  *           for Individual class, command stores the assignment which the
  *           user wants to view
  ------------------------------------------------------------------------------ */
-
 int main(int argc, char* argv[]){
     if(argc != 5 && argc != 6){
         std::cout << "You have entered an invalid type.\n";
@@ -153,7 +97,7 @@ int main(int argc, char* argv[]){
         }
         else std::cout<< "Your category total for " << category << " is " << use_category.Total(category, grades) << std::endl;
     }
-    
+
     //Use case for individual class
     if(type == "INDIVIDUAL") {
         Individual use_individual(category, command, grades, assignment_names);
@@ -164,8 +108,8 @@ int main(int argc, char* argv[]){
         std::cout << "Deliverable Name: " << command << std::endl;
         std::cout << command << "Grade: " << use_individual.GetGrade(category, command, grades) << std::endl;
     }
- 
- // use case for course class
+
+    // use case for course class
     if (type == "COURSE"){
         Course use_course(category, command, grades, assignment_names);
         if (command == "TOTAL") std::cout << use_course.TOTAL(grades) << std::endl;
@@ -173,4 +117,65 @@ int main(int argc, char* argv[]){
         if (command == "COURSETOTAL") std::cout << "Course total: " << use_course.COURSE_TOTAL(grades) << " out of 1000 possible points" << std::endl;
     }
     return 0;
+}
+
+
+
+/* ------------------------------------------------------------------------------
+ * Function: FileToVector
+ * Description:
+ *
+ * Input: Name of the given file to be read from (string)
+ * Output: Grades read in from the file (2D vector)
+ * Process: File is iterated over line by line and each item in the line is
+ *          tokenized and pushed to a temporary vector. At the end of this line,
+ *          the temporary vector is pushed to the vector being returned.
+ ------------------------------------------------------------------------------ */
+std::vector<std::vector<double>> FileToVector(std::string file_name){
+    std::ifstream file(file_name);
+    std::string str;
+    std::vector<std::vector<double>> new_file;
+
+    //Iterates over the file, storing one line at a time into 'str'
+    while(std::getline(file, str)){
+        std::vector<double> new_row;
+        std::istringstream ss(str);
+        double token;
+
+        //While there are still numbers in this string, extract them
+        while(ss >> token){
+            new_row.push_back(token);
+        }
+        new_file.push_back(new_row);
+    }
+    return new_file;
+}
+
+
+
+/* ------------------------------------------------------------------------------
+ * Function: VectorToFile
+ * Description:
+ *
+ * Input: - Grades from each category in chronological order (2D vector)
+ *        - Name of given file to be written to (string)
+ * Output: Output file stream
+ * Process: Each vector within the 2D vector is iterated over. Each item in the
+ *          inner vectors is output to the file with a space following it. At
+ *          the end of the inner vector, a newline is inserted and the next inner
+ *          vector is iterated over.
+ ------------------------------------------------------------------------------ */
+std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, const std::string& file_name){
+    std::ofstream out_file(file_name);
+
+    //Iterate over outer dimension
+    for(std::vector<std::vector<double>>::const_iterator row = grade_vec.begin(); row != grade_vec.end(); row++){
+
+        //Iterator over inner dimension
+        for(std::vector<double>::const_iterator col = row->begin(); col != row->end(); col++){
+            out_file << *col << " ";
+        }
+        out_file << "\n";
+    }
+    return out_file;
 }
