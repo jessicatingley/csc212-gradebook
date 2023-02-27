@@ -17,18 +17,36 @@ The application utilizes 3 classes - `Individual`, `Category`, and `Course` to p
   - ***Only*** the course overall
   
 ## Compilation Instructions
-**The necessary command line arguments provided during compile time are ordered as follows:** <br />
-./prog `<file name>` `<type>` `<category>` `<command>` <br />
+**Prefered Method**
+```
+This program was developed using CLion during compilation and runtime. We reccomend CLion for application use.
+
+The arguments you must provide in the program configuartion should be input as follows:
+<file name> <type> <category> <command> 
+
+Once you have edited the configurations and input program arguments, press the play button in the upper right hand corner to run the application.
+For example - 
+Program arguments: "my_grades.txt category labs allgrades" would run the program to utilize the category class for outputting all lab grades from my_grades.txt.
+```
+**Alternative Method**
+```
+If you are unable to use CLion to run the application you can compile in an alternative IDE such as Visual Studio Code using the "g++" compiler invocation command and "-o" command to generate the target executable file "prog".
+
+This method of compilation is done within the terminal and should be input as follows:
+g++ main.cpp Category.cpp Individual.cpp -o prog 
+To run the program the following input will be given in the terminal:
+./prog <file name> <type> <category> <command>
+
+For example - 
+In terminal: "./prog my_grades.txt category labs allgrades" would run the program to utilize the category class for outputting all lab grades from my_grades.txt.
+```
 <br /> A multi-word CLA ***must*** be written in concatination and all individual CLAs ***must*** be separated by whitespace.
-```
-Example -
-./prog my_grades.txt individual projects finalproject
-```
+
 <!-- Include screenshots to show examples of the program running (SS of how to compile, SS of example input file) -->
 
 ### Input File Formatting:
 ```
-Data - file_name.txt
+Data contained in file_name.txt
 
 999 999 999 999 999 999 999 999 999 999 999 999
 999 999 999 999
@@ -37,7 +55,7 @@ Data - file_name.txt
 ```
 
 ```
-Structure - file_name.txt
+Structure of file_name.txt
 
 LAB1 LAB2 LAB3 LAB4 LAB5 LAB6 LAB7 LAB8 LAB9 LAB10 LAB11 LAB12
 ASSIGNMENT1 ASSIGNMENT2 ASSIGNMENT3 ASSIGNMENT4
@@ -118,6 +136,11 @@ If var type == "COURSE"
 	If var command == "COURSE_TOTAL"
 		Print course total
   ```
+<!-- Individual Class Pseudocode HERE -->
+
+<!-- Category Class Pseudocode HERE -->
+
+<!-- Course Class Pseudocode HERE -->
     
 <!-- Add imgs of initial plnning for Individual and Category Class and Input File -->
     
@@ -194,13 +217,13 @@ $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`
 #### Credits:
 **Project created by Brynne Wright, Jessica Tingley, and Alex Sampalis.** <br />
 <br />
-Brynne focused primarily on building the **Individual class** and use case implememnation in main. She created the **readme** document for the application with all neccessary contents. <br />
+Brynne focused primarily on building the **Individual class** and use case implememnation in main. She developed **pseudocode** for class functionality and processes in main. Lastly, she created a **readme** document for the application with all neccessary contents. <br />
 <br />
-Jessica focused primarily on building the **Category class** and use case implememnation in main. She implemented the **read/write** and **update** functionality for input and output files and oraganized the gradebook algorithm in main. <br />
+Jessica focused primarily on building the **Category class** and use case implememnations in main. She implemented the **read/write** and **update** functionality for input and output files and oraganized the gradebook algorithm in main. She also aided Alex in the development of the Course class. <br />
 <br />
-Alex focused primarily on building the **Course class** and all possible outputs from user commands. She implemented the update functionality developed my Jessica to modify input files when utilizing this class. <br />
+Alex focused primarily on developing **Course class** processes. She implemented the update functionality to modify input files when utilizing this class. <br />
 <br />
-***All members collaborated and contributed to all aspects of the application beyond their primary tasks.*** 
+***All members collaborated and contributed to other aspects of the application beyond their primary tasks.*** 
 
 #### License:
 [License](link)
