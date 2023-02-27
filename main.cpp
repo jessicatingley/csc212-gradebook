@@ -112,7 +112,7 @@ int main(int argc, char* argv[]){
 
     //Use case for category class
     if(type == "CATEGORY"){
-        Category use_category(category, command, grades);
+        Category use_category(category, grades);
         if(command == "ALLGRADES"){
             std::cout << "Your grades for " << category << " are " << use_category.AllGrades(category, grades) << std::endl;
         }
