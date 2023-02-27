@@ -90,21 +90,28 @@ If var type == "COURSE"
 		Print course total
   ```
     
-    - Add imgs of initial plnning for Individual and Category Class and Input File
+<!-- Add imgs of initial plnning for Individual and Category Class and Input File -->
     
 ## Compilation Instructions
-    - Can include screenshots to show examples of the program running (SS of how to compile, SS of example input file)
+**The necessary command line arguments provided during compile time are ordered as follows:** <br />
+./prog `<file name>` `<type>` `<category>` `<command>` <br />
+<br /> A multi-word CLA ***must*** be written in concatination and all individual CLAs ***must*** be separated by whitespace.
+```
+Example -
+./prog my_grades.txt individual projects finalproject
+```
+<!-- Include screenshots to show examples of the program running (SS of how to compile, SS of example input file) -->
     
 ## Runtime Instruction
 The first command line argument should ***always*** be the input file[^1]. <br />  
 **The necessary command line arguments for utilizing the `Individual` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `ASSIGNMENT_NAME`[^4]    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`[^3]:    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
     - 'EXAMS'      
-    Examples of valid input for `ASSIGNMENT_NAME`[^4]:     
+    Examples of valid input for `ASSIGNMENT_NAME`:     
     - 'LAB1'   
     - 'ASSIGNMENT3'    
     - 'REVIEWPROJECT'    
@@ -119,12 +126,12 @@ $ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `ASSI
     
 **The necessary command line arguments for utilizing the `Category` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`[^3]:    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
     - 'EXAMS'      
-    Examples of valid input for `COMMAND`[^4]:     
+    Examples of valid input for `COMMAND`:     
     - 'ALLGRADES'   
     - 'TOTAL'     
     Important notes:     
@@ -135,12 +142,12 @@ $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAN
     
 **The necessary command line arguments for utilizing the `Course` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`[^3]:    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
     - 'EXAMS'      
-    Examples of valid input for `COMMAND`[^4]:     
+    Examples of valid input for `COMMAND`:     
     - 'TOTAL'   
     - 'CATEGORY_TOTAL'   
     - 'COURSE_TOTAL'     
@@ -160,16 +167,34 @@ $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`
 [^4]: This string represents the 'command' variable which identifies what data the user would like to return.
   EXCEPTION: When utilizing the Individual class, the 'command' variable represents the assignment name for the individual grade you wish to return.
 
+### Input File Formatting:
+```
+Data - file_name.txt
+
+999 999 999 999 999 999 999 999 999 999 999 999
+999 999 999 999
+999 999
+999
+```
+
+```
+Structure - file_name.txt
+
+LAB1 LAB2 LAB3 LAB4 LAB5 LAB6 LAB7 LAB8 LAB9 LAB10 LAB11 LAB12
+ASSIGNMENT1 ASSIGNMENT2 ASSIGNMENT3 ASSIGNMENT4
+REVIEWPROJECT FINALPROJECT
+EXAM
+```
+
 ## Sample Input/Output
-    -Include screenshots with brief explanations of the images used
+<!-- Include screenshots with brief explanations of the images used -->
 ### Test Cases:
-Written tests for the application. Examples of how to run these tests.
+<!-- Written tests for the application. Examples of how to run these tests. -->
 
 #### Credits:
 Project created by Brynne Wright, Jessica Tingley, and Alex Sampalis.
-Who did what... ? Expln
+<!-- Who did what... ? Expln -->
 
 #### License:
-[License]
-(link)
+[License](link)
 
