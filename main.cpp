@@ -78,6 +78,16 @@ std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, co
  ------------------------------------------------------------------------------ */
 
 int main(int argc, char* argv[]){
+    if(argc != 5 && argc != 6){
+        std::cout << "You have entered an invalid type.\n";
+        std::cout << "Usage: ./prog <file_name> <type> <category> <command>\n";
+        std::cout << "Usage to update a grade: ./prog <file_name> <UPDATE> <category> <command> <grade>\n";
+        std::cout << "\t<category>\tCategory of grade you would like to change\n";
+        std::cout << "\t<command>\tName of the assignment you would like to update, to be written with no whitespace\n";
+        std::cout << "Valid types: INDIVIDUAL, CATEGORY, COURSE, UPDATE";
+        std::cout << "Valid categories: LABS, ASSIGNMENTS, PROJECTS, EXAMS";
+        return 0;
+    }
     std::vector<std::vector<double>> grades = FileToVector(argv[1]);
     std::vector<std::vector<std::string>> assignment_names = {
             {"LAB1", "LAB2", "LAB3", "LAB4", "LAB5", "LAB6", "LAB7", "LAB8", "LAB9", "LAB10", "LAB11", "LAB12"},
@@ -98,12 +108,37 @@ int main(int argc, char* argv[]){
     std::transform(command.begin(), command.end(), command.begin(), ::toupper);
 
     std::vector<std::string> valid_types = {"INDIVIDUAL", "CATEGORY", "COURSE", "UPDATE"};
-    assert(std::find(valid_types.begin(), valid_types.end(), type) != valid_types.end());
+    if(std::find(valid_types.begin(), valid_types.end(), type) == valid_types.end()){
+        std::cout << "You have entered an invalid type.\n";
+        std::cout << "Usage: ./prog <file_name> <type> <category> <command>\n";
+        std::cout << "Usage to update a grade: ./prog <file_name> <UPDATE> <category> <command> <grade>\n";
+        std::cout << "\t<category>\tCategory of grade you would like to change\n";
+        std::cout << "\t<command>\tName of the assignment you would like to update, to be written with no whitespace\n";
+        std::cout << "Valid types: INDIVIDUAL, CATEGORY, COURSE, UPDATE";
+        return 0;
+    }
 
     std::vector<std::string> valid_categories = {"LABS", "ASSIGNMENTS", "PROJECTS", "EXAMS"};
-    assert(std::find(valid_categories.begin(), valid_categories.end(), category) != valid_categories.end());
+    if(std::find(valid_categories.begin(), valid_categories.end(), category) == valid_categories.end()){
+        std::cout << "You have entered an invalid category.\n";
+        std::cout << "Usage: ./prog <file_name> <type> <category> <command>\n";
+        std::cout << "Usage to update a grade: ./prog <file_name> <UPDATE> <category> <command> <grade>\n";
+        std::cout << "\t<category>\tCategory of grade you would like to change\n";
+        std::cout << "\t<command>\tName of the assignment you would like to update, to be written with no whitespace\n";
+        std::cout << "Valid categories: LABS, ASSIGNMENTS, PROJECTS, EXAMS";
+        return 0;
+    }
 
     if(type == "UPDATE"){
+        if(argc != 6){
+            std::cout << "Usage: ./prog <file_name> <UPDATE> <category> <command> <grade>\n";
+            std::cout << "\t<file_name>\tFile you would like read from and written to\n";
+            std::cout << "\t<UPDATE>\tTo update a grade, enter UPDATE exactly\n";
+            std::cout << "\t<category>\tCategory of grade you would like to change\n";
+            std::cout << "\t<command>\tName of the assignment you would like to update, to be written with no whitespace\n";
+            std::cout << "\t<grade>\tThe new value of the grade\n";
+            return 0;
+        }
         int new_grade = std::stoi(argv[5]);
         Individual update_grade(category, command, grades, assignment_names);
         grades[update_grade.DetermineCategory(category)][update_grade.GetIndex(category, command, assignment_names)] = new_grade;
@@ -121,7 +156,6 @@ int main(int argc, char* argv[]){
     
     //Use case for individual class
     if(type == "INDIVIDUAL") {
-        assert(std::find(assignment_names_flat.begin(), assignment_names_flat.end(), command) != assignment_names_flat.end());
         Individual use_individual(category, command, grades, assignment_names);
         if(use_individual.GetGrade(category, command, grades) == 999){
             std::cout << "This grade has not been entered yet" << std::endl;
@@ -159,8 +193,6 @@ int main(int argc, char* argv[]){
             // return course total
             std::cout << use_course.COURSE_TOTAL(category, grades) << std::endl;
         }
-
     }
-    
     return 0;
 }

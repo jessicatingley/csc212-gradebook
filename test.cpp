@@ -17,9 +17,9 @@ void TestIndivDetermineCategory(){
     std::string category = "LABS";
     std::string command = "LAB1";
     std::vector<std::vector<double>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                                            {0, 0, 0, 0},
-                                            {0, 0},
-                                            {0}};
+                                               {0, 0, 0, 0},
+                                               {0, 0},
+                                               {0}};
     Individual test_individual(category, command, grades, assignment_names);
     assert(test_individual.DetermineCategory(category) == 0);
 
