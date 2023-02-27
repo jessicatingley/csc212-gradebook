@@ -15,6 +15,16 @@ The application utilizes 3 classes - `Individual`, `Category`, and `Course` to p
   - All grades within their respective categories and the course overall
   - ***Only*** category totals and the course overall
   - ***Only*** the course overall
+  
+## Compilation Instructions
+**The necessary command line arguments provided during compile time are ordered as follows:** <br />
+./prog `<file name>` `<type>` `<category>` `<command>` <br />
+<br /> A multi-word CLA ***must*** be written in concatination and all individual CLAs ***must*** be separated by whitespace.
+```
+Example -
+./prog my_grades.txt individual projects finalproject
+```
+<!-- Include screenshots to show examples of the program running (SS of how to compile, SS of example input file) -->
 
 ## Planning
 ### Pseudocode / Flowcharts:
@@ -91,16 +101,6 @@ If var type == "COURSE"
   ```
     
 <!-- Add imgs of initial plnning for Individual and Category Class and Input File -->
-    
-## Compilation Instructions
-**The necessary command line arguments provided during compile time are ordered as follows:** <br />
-./prog `<file name>` `<type>` `<category>` `<command>` <br />
-<br /> A multi-word CLA ***must*** be written in concatination and all individual CLAs ***must*** be separated by whitespace.
-```
-Example -
-./prog my_grades.txt individual projects finalproject
-```
-<!-- Include screenshots to show examples of the program running (SS of how to compile, SS of example input file) -->
     
 ## Runtime Instruction
 The first command line argument should ***always*** be the input file[^1]. <br />  
