@@ -152,17 +152,17 @@ If var type == "COURSE"
 The first command line argument should ***always*** be the input file[^1]. <br />  
 **The necessary command line arguments for utilizing the `Individual` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `ASSIGNMENT_NAME`[^4]    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
-    - 'LABS'   
+    <br /> Valid inputs for `CATEGORY_OF_ASSIGNMENT`:    
+    - 'Labs'   
     - 'ASSIGNMENTS'     
-    - 'PROJECTS'     
+    - 'projects'     
     - 'EXAMS'      
-    Examples of valid input for `ASSIGNMENT_NAME`:     
+    Examples of valid inputs for `ASSIGNMENT_NAME`:     
     - 'LAB1'   
-    - 'ASSIGNMENT3'    
+    - 'Assignment3'    
     - 'REVIEWPROJECT'    
-    - 'FINALPROJECT'   
-    - 'EXAM'   
+    - 'FinalProject'   
+    - 'Exam'   
     Important notes:     
     - `CATGORY_OF_ASSIGNMENT` ***must*** correspond with `ASSIGNMENT_NAME`   
       - I.e. entering 'LABS' for `CATEGORY_OF_ASSIGNMENT` and 'ASSIGNMENT3' for `ASSIGNMENT_NAME` would result in an incorrect grade being returned.    
@@ -174,11 +174,11 @@ $ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `ASSI
 $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
     <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
-    - 'ASSIGNMENTS'     
+    - 'Assignments'     
     - 'PROJECTS'     
-    - 'EXAMS'      
+    - 'exams'      
     Examples of valid input for `COMMAND`:     
-    - 'ALLGRADES'   
+    - 'AllGrades'   
     - 'TOTAL'     
     Important notes:     
     - A valid `COMMAND` ***must*** be given when type 'CATEGORY' is used.       
@@ -189,14 +189,14 @@ $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAN
 **The necessary command line arguments for utilizing the `Course` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
     <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
-    - 'LABS'   
+    - 'labs'   
     - 'ASSIGNMENTS'     
-    - 'PROJECTS'     
+    - 'Projects'     
     - 'EXAMS'      
     Examples of valid input for `COMMAND`:     
-    - 'TOTAL'   
-    - 'CATEGORY_TOTAL'   
-    - 'COURSE_TOTAL'     
+    - 'Total'   
+    - 'CATEGORYTOTAL'   
+    - 'CourseTotal'     
     Important notes:     
     - A valid `COMMAND` ***must*** be given when type 'COURSE' is used.       
     - No spaces should be left in input for `COMMAND`
