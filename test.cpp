@@ -170,13 +170,19 @@ void TestCategoryTotal(){
 };
 
 // Test Course Class
-void TestCourseAllGrades(){
+void TestTotal(){
     std::string category = "LABS";
     std::string command = "LAB1";
-    std::vector<std::vector<double>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                                               {0, 0, 0, 0},
-                                               {0, 0},
-                                               {0}};
+    std::vector<std::vector<double>> grades = {{70, 999, 100, 90, 90.6, 80.8, 100, 50.5, 999, 20.3, 77.7, 999},
+                                               {55.5, 30.6, 999, 100},
+                                               {90.9, 30.6},
+                                               {100}};
+    Course test_course(category, command, grades, assignment_names);
+    assert(test_course.TOTAL(grades) == "Labs: 70 Grade Not Entered 100 90 90.6 80.8 100 50.5 Grade Not Entered 20.3 77.7 Grade Not Entered\n"
+                                        "Assignments: 55.5 30.6 Grade Not Entered 100\n"
+                                        "Projects: 90.9 30.6\n"
+                                        "Exam: 100");
+
 
 };
 
