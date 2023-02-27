@@ -96,12 +96,10 @@ If var type == "COURSE"
     - Can include screenshots to show examples of the program running (SS of how to compile, SS of example input file)
     
 ## Runtime Instruction
-The first command line argument should ***always*** be the text file.  
-The necessary command line arguments for utilizing the **Individual class** will be input as follows:  
-    ```
-    $ ./prog file_name.txt INDIVIDUAL CATEGORY_OF_ASSIGNMENT ASSIGNMENT_NAME  
-    ```  
-    Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+The first command line argument should ***always*** be the input file[^1]. <br />  
+**The necessary command line arguments for utilizing the `Individual` class will be input as follows:**  
+$ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
@@ -119,11 +117,9 @@ The necessary command line arguments for utilizing the **Individual class** will
     	- I.e. entering 'ASSIGNMENT 3' for `ASSIGNMENT_NAME` would be invalid.
     - If input is invalid, the program will break with an assert.
     
-The necessary command line arguments for utilizing the **Category class** will be input as follows:  
-    ```
-    $ ./prog file_name.txt CATEGORY CATEGORY_OF_ASSIGNMENT COMMAND  
-    ```  
-    Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+**The necessary command line arguments for utilizing the `Category` class will be input as follows:**  
+$ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
@@ -137,11 +133,9 @@ The necessary command line arguments for utilizing the **Category class** will b
     	- I.e. entering 'ALL GRADES' for `COMMAND` would be invalid.
     - If input is invalid, the program will break with an assert.
     
-The necessary command line arguments for utilizing the **Course class** will be input as follows:  
-    ```
-    $ ./prog file_name.txt[^file] COURSE CATEGORY_OF_ASSIGNMENT COMMAND  
-    ```  
-    Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+**The necessary command line arguments for utilizing the `Course` class will be input as follows:**  
+$ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
@@ -156,8 +150,9 @@ The necessary command line arguments for utilizing the **Course class** will be 
     	- I.e. entering 'COURSE TOTAL' for `COMMAND` would be invalid.
     - If input is invalid, the program will break with an assert.
 
-	[^file]: The input file (in this case 'file_name.txt') is your own dataset of grades passed in by the first CLA.
+[^1]: The input file (in this case 'file_name.txt') is your own dataset of grades passed in by the first CLA.
 	  This is the file our gradebook program will be evaluating or updating. 
+[^2]: This string represents the 'type' variable which identifies the class you will be utilizing to evaluate your grades.
 
 ## Sample Input/Output
     -Include screenshots with brief explanations of the images used
