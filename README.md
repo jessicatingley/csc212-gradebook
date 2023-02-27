@@ -118,14 +118,42 @@ The necessary command line arguments for utilizing the **Individual class** will
     - No spaces should be left in input for `ASSIGNMENT_NAME`    
     - If input is invalid, the program will break with an assert.
     
-The necessary command line arguments for utilizing the `Category class` will be input as follows:
+The necessary command line arguments for utilizing the **Category class** will be input as follows:  
     ```
-    <input file name> <class type> <assignment category> <output command>
+    $ ./prog file_name.txt CATEGORY CATEGORY_OF_ASSIGNMENT COMMAND  
+    ```  
+    Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+    - `LABS`   
+    - `ASSIGNMENTS`     
+    - `PROJECTS`     
+    - `EXAMS`      
+    Examples of valid input for `COMMAND`:     
+    - `ALLGRADES`   
+    - `TOTAL`     
+    Important notes:     
+    - `COMMAND` ***must*** be given when type `CATEGORY` is used.       
+    - No spaces should be left in input for `COMMAND`
+    	- I.e. entering `ALL GRADES` for `COMMAND` would be invalid.
+    - If input is invalid, the program will break with an assert.
+    
+The necessary command line arguments for utilizing the **Course class** will be input as follows:  
     ```
-The necessary command line arguments for utilizing the `Course class` will be input as follows:
-    ```
-    <input file name> <class type> <assignment category> <output command>
-    ```
+    $ ./prog file_name.txt COURSE CATEGORY_OF_ASSIGNMENT COMMAND  
+    ```  
+    Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+    - `LABS`   
+    - `ASSIGNMENTS`     
+    - `PROJECTS`     
+    - `EXAMS`      
+    Examples of valid input for `COMMAND`:     
+    - `TOTAL`   
+    - `CATEGORY_TOTAL`   
+    - `COURSE_TOTAL`     
+    Important notes:     
+    - `COMMAND` ***must*** be given when type `COURSE` is used.       
+    - No spaces should be left in input for `COMMAND`
+    	- I.e. entering `COURSE TOTAL` for `COMMAND` would be invalid.
+    - If input is invalid, the program will break with an assert.
 
 ## Sample Input/Output
     -Include screenshots with brief explanations of the images used
