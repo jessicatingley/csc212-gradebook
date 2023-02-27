@@ -166,33 +166,11 @@ int main(int argc, char* argv[]){
     }
  
  // use case for course class
-    if (type == "COURSE")
-    {
-        // case 1 (all grades for every category and course overall totals)
-        // command == TOTAL
+    if (type == "COURSE"){
         Course use_course(category, command, grades, assignment_names);
-        if (command == "TOTAL")
-        {
-            // return category, assignment name, grade
-            // return course total
-            std::cout << use_course.TOTAL(category, grades, assignment_names) << std::endl;
-        }
-        // case 2 (catagory totals and course overall total)
-        // command == catagory_total
-        if (command == "CATEGORY_TOTAL")
-        {
-            // return category total
-            // return course total
-            std::cout << use_course.CATEGORY_TOTAL(category, grades) << std::endl;
-        }
-
-        // case 3 (only course overall)
-        // command == course_total
-        if (command == "COURSE_TOTAL")
-        {
-            // return course total
-            std::cout << use_course.COURSE_TOTAL(category, grades) << std::endl;
-        }
+        if (command == "TOTAL") std::cout << use_course.TOTAL(category, grades, assignment_names) << std::endl;
+        if (command == "CATEGORYTOTAL") std::cout << use_course.CATEGORY_TOTAL(category, grades) << std::endl;
+        if (command == "COURSETOTAL") std::cout << "Course total: " << use_course.COURSE_TOTAL(category, grades) << " out of 1000 possible points" << std::endl;
     }
     return 0;
 }
