@@ -98,13 +98,13 @@ If var type == "COURSE"
 ## Runtime Instruction
 The first command line argument should ***always*** be the input file[^1]. <br />  
 **The necessary command line arguments for utilizing the `Individual` class will be input as follows:**  
-$ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+$ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `ASSIGNMENT_NAME`[^4]    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`[^3]:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
     - 'EXAMS'      
-    Examples of valid input for `ASSIGNMENT_NAME`:     
+    Examples of valid input for `ASSIGNMENT_NAME`[^4]:     
     - 'LAB1'   
     - 'ASSIGNMENT3'    
     - 'REVIEWPROJECT'    
@@ -118,13 +118,13 @@ $ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`
     - If input is invalid, the program will break with an assert.
     
 **The necessary command line arguments for utilizing the `Category` class will be input as follows:**  
-$ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+$ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`[^3]:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
     - 'EXAMS'      
-    Examples of valid input for `COMMAND`:     
+    Examples of valid input for `COMMAND`[^4]:     
     - 'ALLGRADES'   
     - 'TOTAL'     
     Important notes:     
@@ -134,13 +134,13 @@ $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`
     - If input is invalid, the program will break with an assert.
     
 **The necessary command line arguments for utilizing the `Course` class will be input as follows:**  
-$ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+$ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
+    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`[^3]:    
     - 'LABS'   
     - 'ASSIGNMENTS'     
     - 'PROJECTS'     
     - 'EXAMS'      
-    Examples of valid input for `COMMAND`:     
+    Examples of valid input for `COMMAND`[^4]:     
     - 'TOTAL'   
     - 'CATEGORY_TOTAL'   
     - 'COURSE_TOTAL'     
@@ -151,8 +151,14 @@ $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT` `COMMAND`
     - If input is invalid, the program will break with an assert.
 
 [^1]: The input file (in this case 'file_name.txt') is your own dataset of grades passed in by the first CLA.
-	  This is the file our gradebook program will be evaluating or updating. 
+  This is the file our gradebook program will be evaluating or updating. 
+  
 [^2]: This string represents the 'type' variable which identifies the class you will be utilizing to evaluate your grades.
+
+[^3]: This string represents the 'category' variable which identifies the catgeory of assignments within your grades that you wish to evaluate.
+
+[^4]: This string represents the 'command' variable which identifies what data the user would like to return.
+  EXCEPTION: When utilizing the Individual class, the 'command' variable represents the assignment name for the individual grade you wish to return.
 
 ## Sample Input/Output
     -Include screenshots with brief explanations of the images used
