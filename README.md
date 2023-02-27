@@ -172,12 +172,12 @@ $ ./prog `file_name.txt`[^1] `INDIVIDUAL`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `ASSI
     
 **The necessary command line arguments for utilizing the `Category` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+    <br /> Valid inputs for `CATEGORY_OF_ASSIGNMENT`:    
     - 'LABS'   
     - 'Assignments'     
     - 'PROJECTS'     
     - 'exams'      
-    Examples of valid input for `COMMAND`:     
+    Examples of valid inputs for `COMMAND`:     
     - 'AllGrades'   
     - 'TOTAL'     
     Important notes:     
@@ -188,12 +188,12 @@ $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAN
     
 **The necessary command line arguments for utilizing the `Course` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
-    <br /> Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+    <br /> Valid inputs for `CATEGORY_OF_ASSIGNMENT`:    
     - 'labs'   
     - 'ASSIGNMENTS'     
     - 'Projects'     
     - 'EXAMS'      
-    Examples of valid input for `COMMAND`:     
+    Examples of valid inputs for `COMMAND`:     
     - 'Total'   
     - 'CATEGORYTOTAL'   
     - 'CourseTotal'     
