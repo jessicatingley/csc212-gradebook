@@ -2,8 +2,8 @@
 #include <vector>
 #include "Category.h"
 
-Category::Category(std::string category, std::string command, std::vector<std::vector<double>> grades)
-    : category(category), command(command), grades(grades){}
+Category::Category(std::string category, std::vector<std::vector<double>> grades)
+    : category(category), grades(grades){}
 
 
 /* ------------------------------------------------------------------------------

@@ -110,27 +110,63 @@ void TestCategoryDetermineCategory(){
                                             {0, 0, 0, 0},
                                             {0, 0},
                                             {0}};
-    Category test_category(category, command, grades);
+    Category test_category(category, grades);
     assert(test_category.DetermineCategory(category) == 0);
 
     category = "ASSIGNMENTS";
-    Category test_category1(category, command, grades);
+    Category test_category1(category, grades);
     assert(test_category1.DetermineCategory(category) == 1);
 
     category = "PROJECTS";
-    Category test_category2(category, command, grades);
+    Category test_category2(category, grades);
     assert(test_category2.DetermineCategory(category) == 2);
 
     category = "EXAMS";
-    Category test_category3(category, command, grades);
+    Category test_category3(category, grades);
     assert(test_category3.DetermineCategory(category) == 3);
 }
 void TestCategoryAllGrades(){
-    Category test_category();
+    std::string category = "LABS";
+    std::vector<std::vector<double>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 999, 0},
+                                               {999, 0},
+                                               {0}};
+    Category test_category(category, grades);
+    assert(test_category.AllGrades(category, grades) == "0 0 0 0 0 0 0 0 0 0 0 0 ");
+
+    category = "ASSIGNMENTS";
+    Category test_category1(category, grades);
+    assert(test_category1.AllGrades(category, grades) == "0 0 Grade Not Entered 0 ");
+
+    category = "PROJECTS";
+    Category test_category2(category, grades);
+    assert(test_category2.AllGrades(category, grades) == "Grade Not Entered 0 ");
+
+    category = "EXAMS";
+    Category test_category3(category, grades);
+    assert(test_category3.AllGrades(category, grades) == "0 ");
 };
 
 void TestCategoryTotal(){
+    std::string category = "LABS";
+    std::vector<std::vector<double>> grades = {{80.5, 999, 90, 70, 0, 98, 0, 11.2, 999, 0, 9, 0},
+                                               {8.8, 70, 999, 0},
+                                               {999, 2},
+                                               {999}};
+    Category test_category(category, grades);
+    assert(test_category.Total(category, grades) == 358.7);
 
+    category = "ASSIGNMENTS";
+    Category test_category1(category, grades);
+    assert(test_category1.Total(category, grades) == 78.8);
+
+    category = "PROJECTS";
+    Category test_category2(category, grades);
+    assert(test_category2.Total(category, grades) == 2);
+
+    category = "EXAMS";
+    Category test_category3(category, grades);
+    assert(test_category3.Total(category, grades) == 0);
 };
 
 // Test Course Class
