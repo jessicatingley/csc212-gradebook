@@ -135,9 +135,9 @@ If var type == "COURSE"
 	Instantiate new instance of course class
 	If var command == "TOTAL"
 		Print total
-	If var command == "CATEGORY_TOTAL"
+	If var command == "CATEGORYTOTAL"
 		Print category total
-	If var command == "COURSE_TOTAL"
+	If var command == "COURSETOTAL"
 		Print course total
   ```
 <!-- Individual Class Pseudocode HERE -->
