@@ -192,8 +192,15 @@ EXAM
 <!-- Written tests for the application. Examples of how to run these tests. -->
 
 #### Credits:
-Project created by Brynne Wright, Jessica Tingley, and Alex Sampalis.
-<!-- Who did what... ? Expln -->
+**Project created by Brynne Wright, Jessica Tingley, and Alex Sampalis.** <br />
+<br />
+Brynne focused primarily on building the **Individual class** and use case implememnation in main. She created the **readme** document for the application with all neccessary contents. <br />
+<br />
+Jessica focused primarily on building the **Category class** and use case implememnation in main. She implemented the **read/write** and **update** functionality for input and output files and oraganized the gradebook algorithm in main. <br />
+<br />
+Alex focused primarily on building the **Course class** and all possible outputs from user commands. She implemented the update functionality developed my Jessica to modify input files when utilizing this class. <br />
+<br />
+***All members collaborated and contributed to all aspects of the application beyond their primary tasks.*** 
 
 #### License:
 [License](link)
