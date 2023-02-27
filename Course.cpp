@@ -40,19 +40,19 @@ std::string Course::CATEGORY_TOTAL(std::string category, std::vector<std::vector
         {
             total += grade;
         }
-        if (i = 0)
+        if (i == 0)
         {
             std::cout << "Lab total: " << total << std::endl;
         }
-        if (i = 1)
+        if (i == 1)
         {
             std::cout << "Assignment total: " << total << std::endl;
         }
-        if (i = 2)
+        if (i == 2)
         {
             std::cout << "Project total: " << total << std::endl;
         }
-        if (i = 3)
+        if (i == 3)
         {
             std::cout << "Exam total: " << total << std::endl;
         }
