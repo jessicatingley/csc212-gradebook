@@ -12,8 +12,8 @@
  * Function: FileToVector
  * Description:
  *
- * Input: Name of the file to be read as a string
- * Output: 2D vector of doubles
+ * Input: Name of the given file to be read from (string)
+ * Output: Grades read in from the file (2D vector)
  * Process: File is iterated over line by line and each item in the line is
  *          tokenized and pushed to a temporary vector. At the end of this line,
  *          the temporary vector is pushed to the vector being returned.
@@ -38,20 +38,28 @@ std::vector<std::vector<double>> FileToVector(std::string file_name){
     return new_file;
 }
 
+/* ------------------------------------------------------------------------------
+ * Function: VectorToFile
+ * Description:
+ *
+ * Input: - Grades from each category in chronological order (2D vector)
+ *        - Name of given file to be written to (string)
+ * Output: Output file stream
+ * Process: Each vector within the 2D vector is iterated over. Each item in the
+ *          inner vectors is output to the file with a space following it. At
+ *          the end of the inner vector, a newline is inserted and the next inner
+ *          vector is iterated over.
+ ------------------------------------------------------------------------------ */
 std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, const std::string& file_name){
-    //Open file with write permissions
     std::ofstream out_file(file_name);
 
-    //Use iterator to traverse outer dimension
+    //Iterate over outer dimension
     for(std::vector<std::vector<double>>::const_iterator row = grade_vec.begin(); row != grade_vec.end(); row++){
 
-        //Iterator to traverse inner dimension
+        //Iterator over inner dimension
         for(std::vector<double>::const_iterator col = row->begin(); col != row->end(); col++){
-            //Output each element to the file with a space at the end
             out_file << *col << " ";
         }
-
-        //Output a newline symbol to the file
         out_file << "\n";
     }
     return out_file;
@@ -64,7 +72,9 @@ std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, co
  *
  * Type = class the user is looking to use
  * Category = category the user wants grades from (labs, assignments, etc)
- * Command = which method of the specified class the user is looking to use
+ * Command = which method of the specified class the user is looking to use;
+ *           for Individual class, command stores the assignment which the
+ *           user wants to view
  ------------------------------------------------------------------------------ */
 
 int main(int argc, char* argv[]){
