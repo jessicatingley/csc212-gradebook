@@ -139,7 +139,7 @@ int main(int argc, char* argv[]){
         {
             // return category total
             // return course total
-            std::cout << use_course.CATEGORY_TOTAL(category, grades, assignment_names) << std::endl;
+            std::cout << use_course.CATEGORY_TOTAL(category, grades) << std::endl;
         }
 
         // case 3 (only course overall)
@@ -147,7 +147,7 @@ int main(int argc, char* argv[]){
         if (command == "COURSE_TOTAL")
         {
             // return course total
-            std::cout << use_course.COURSE_TOTAL(category, grades, assignment_names) << std::endl;
+            std::cout << use_course.COURSE_TOTAL(category, grades) << std::endl;
         }
 
     }
