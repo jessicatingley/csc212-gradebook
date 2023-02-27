@@ -24,6 +24,10 @@ This program was developed using CLion during compilation and runtime. We reccom
 The arguments you must provide in the program configuartion should be input as follows:
 <file name> <type> <category> <command> 
 
+You must also add your target executable files in CMakeLists.txt using CMake add_executable
+For example - 
+add_executable(csc212_gradebook Category.cpp Course.cpp Individual.cpp main.cpp)
+
 Once you have edited the configurations and input program arguments, press the play button in the upper right hand corner to run the application.
 For example - 
 Program arguments: "my_grades.txt category labs allgrades" would run the program to utilize the category class for outputting all lab grades from my_grades.txt.
@@ -33,7 +37,7 @@ Program arguments: "my_grades.txt category labs allgrades" would run the program
 If you are unable to use CLion to run the application you can compile in an alternative IDE such as Visual Studio Code using the "g++" compiler invocation command and "-o" command to generate the target executable file "prog".
 
 This method of compilation is done within the terminal and should be input as follows:
-g++ main.cpp Category.cpp Individual.cpp -o prog 
+g++ main.cpp Category.cpp Individual.cpp Course.cpp -o prog 
 To run the program the following input will be given in the terminal:
 ./prog <file name> <type> <category> <command>
 
