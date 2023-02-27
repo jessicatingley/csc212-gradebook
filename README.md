@@ -102,20 +102,21 @@ The necessary command line arguments for utilizing the **Individual class** will
     $ ./prog file_name.txt INDIVIDUAL CATEGORY_OF_ASSIGNMENT ASSIGNMENT_NAME  
     ```  
     Valid input for `CATEGORY_OF_ASSIGNMENT`:    
-    - `LABS`   
-    - `ASSIGNMENTS`     
-    - `PROJECTS`     
-    - `EXAMS`      
+    - 'LABS'   
+    - 'ASSIGNMENTS'     
+    - 'PROJECTS'     
+    - 'EXAMS'      
     Examples of valid input for `ASSIGNMENT_NAME`:     
-    - `LAB1`   
-    - `ASSIGNMENT3`    
-    - `REVIEWPROJECT`    
-    - `FINALPROJECT`   
-    - `EXAM`   
+    - 'LAB1'   
+    - 'ASSIGNMENT3'    
+    - 'REVIEWPROJECT'    
+    - 'FINALPROJECT'   
+    - 'EXAM'   
     Important notes:     
     - `CATGORY_OF_ASSIGNMENT` ***must*** correspond with `ASSIGNMENT_NAME`   
-      - I.e. entering `LABS` for `CATEGORY_OF_ASSIGNMENT` and `ASSIGNMENT3` for `ASSIGNMENT_NAME` would result in an incorrect grade being returned.    
-    - No spaces should be left in input for `ASSIGNMENT_NAME`    
+      - I.e. entering 'LABS' for `CATEGORY_OF_ASSIGNMENT` and 'ASSIGNMENT3' for `ASSIGNMENT_NAME` would result in an incorrect grade being returned.    
+    - No spaces should be left in input for `ASSIGNMENT_NAME`
+    	- I.e. entering 'ASSIGNMENT 3' for `ASSIGNMENT_NAME` would be invalid.
     - If input is invalid, the program will break with an assert.
     
 The necessary command line arguments for utilizing the **Category class** will be input as follows:  
@@ -123,37 +124,40 @@ The necessary command line arguments for utilizing the **Category class** will b
     $ ./prog file_name.txt CATEGORY CATEGORY_OF_ASSIGNMENT COMMAND  
     ```  
     Valid input for `CATEGORY_OF_ASSIGNMENT`:    
-    - `LABS`   
-    - `ASSIGNMENTS`     
-    - `PROJECTS`     
-    - `EXAMS`      
+    - 'LABS'   
+    - 'ASSIGNMENTS'     
+    - 'PROJECTS'     
+    - 'EXAMS'      
     Examples of valid input for `COMMAND`:     
-    - `ALLGRADES`   
-    - `TOTAL`     
+    - 'ALLGRADES'   
+    - 'TOTAL'     
     Important notes:     
-    - `COMMAND` ***must*** be given when type `CATEGORY` is used.       
+    - A valid `COMMAND` ***must*** be given when type 'CATEGORY' is used.       
     - No spaces should be left in input for `COMMAND`
-    	- I.e. entering `ALL GRADES` for `COMMAND` would be invalid.
+    	- I.e. entering 'ALL GRADES' for `COMMAND` would be invalid.
     - If input is invalid, the program will break with an assert.
     
 The necessary command line arguments for utilizing the **Course class** will be input as follows:  
     ```
-    $ ./prog file_name.txt COURSE CATEGORY_OF_ASSIGNMENT COMMAND  
+    $ ./prog file_name.txt[^file] COURSE CATEGORY_OF_ASSIGNMENT COMMAND  
     ```  
     Valid input for `CATEGORY_OF_ASSIGNMENT`:    
-    - `LABS`   
-    - `ASSIGNMENTS`     
-    - `PROJECTS`     
-    - `EXAMS`      
+    - 'LABS'   
+    - 'ASSIGNMENTS'     
+    - 'PROJECTS'     
+    - 'EXAMS'      
     Examples of valid input for `COMMAND`:     
-    - `TOTAL`   
-    - `CATEGORY_TOTAL`   
-    - `COURSE_TOTAL`     
+    - 'TOTAL'   
+    - 'CATEGORY_TOTAL'   
+    - 'COURSE_TOTAL'     
     Important notes:     
-    - `COMMAND` ***must*** be given when type `COURSE` is used.       
+    - A valid `COMMAND` ***must*** be given when type 'COURSE' is used.       
     - No spaces should be left in input for `COMMAND`
-    	- I.e. entering `COURSE TOTAL` for `COMMAND` would be invalid.
+    	- I.e. entering 'COURSE TOTAL' for `COMMAND` would be invalid.
     - If input is invalid, the program will break with an assert.
+
+	[^file]: The input file (in this case 'file_name.txt') is your own dataset of grades passed in by the first CLA.
+	  This is the file our gradebook program will be evaluating or updating. 
 
 ## Sample Input/Output
     -Include screenshots with brief explanations of the images used
