@@ -171,6 +171,12 @@ void TestCategoryTotal(){
 
 // Test Course Class
 void TestCourseAllGrades(){
+    std::string category = "LABS";
+    std::string command = "LAB1";
+    std::vector<std::vector<double>> grades = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 0, 0},
+                                               {0, 0},
+                                               {0}};
 
 };
 

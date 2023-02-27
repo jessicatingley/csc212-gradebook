@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 //------------------------------------------------------------------
 
@@ -14,65 +15,60 @@ Course::Course(std::string category, std::string command, std::vector<std::vecto
 // command == TOTAL
 
 // return labs, assignments, projects, exam
-std::string Course::TOTAL(std::string category, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names)
-{
-    for (int i = 0; i++; i <= 3)
-    {
-        std::string all_grades = " ";
-        for (const auto grade : grades[i])
-        {
-            all_grades += std::to_string(grade) + " ";
+std::string Course::TOTAL(std::string category, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names){
+    std::string all_grades = " ";
+
+    for(int i = 0; i <= 3; i++){
+        if (i == 0){
+            all_grades += "Labs: ";
+            for(auto grade : grades[i]){
+                all_grades += std::to_string(grade) + " ";
+            }
+            all_grades += "\n";
         }
-        return all_grades;
-        if (i == 0)
-        {
-            // have to drop two of the lowest grades
-            std::cout << "Labs: " << all_grades << std::endl;
+        else if(i == 1){
+            all_grades += "Assignments: ";
+            for(auto grade : grades[i]){
+                all_grades += std::to_string(grade) + " ";
+            }
+            all_grades += "\n";
         }
-        if (i == 1)
-        {
-            std::cout << "Assignments: " << all_grades << std::endl;
+        else if(i == 2){
+            all_grades += "Projects: ";
+            for(auto grade : grades[i]){
+                all_grades += std::to_string(grade) + " ";
+            }
+            all_grades += "\n";
         }
-        if (i == 2)
-        {
-            std::cout << "Projects: " << all_grades << std::endl;
+        else{
+            all_grades += "Exam: ";
+            for(auto grade : grades[i]){
+                all_grades += std::to_string(grade) + " ";
+            }
+            all_grades += "\n";
         }
-        if (i == 3)
-        {
-            std::cout << "Exam: " << all_grades << std::endl;
-        }
-        all_grades.clear();
     }
+    return all_grades;
 }
 // case 2 (catagory totals and course overall total)
 // command == catagory_total
 
 // return catagory totals
-std::string Course::CATEGORY_TOTAL(std::string category, std::vector<std::vector<double>> grades)
-{
-    for (int i = 0; i++; i < 3)
-    {
+std::string Course::CATEGORY_TOTAL(std::string category, std::vector<std::vector<double>> grades){
+    std::string output = "";
+    for (int i = 0; i <= 3; i++){
         double total = 0;
-        for (const auto grade : grades[i])
-        {
-            if (grade != 999)
-            {
+        for (const auto grade : grades[i]){
+            if (grade != 999){
                 total += grade;
             }
 
-            if (i == 0)
-            {
-                // grade[0]
-                if (grades.size() == 12)
-                {
-                    total = 0;
-                    //  drop 2 lowest grades
-                    // sort in descending
-                    std::sort(grades.begin(), grades.end(), std::greater<int>());
-                    // add up first 10 indicies (ignore last lowest)
-                    for (int a = 0; a++; a < 10)
-                    {
-                        total += grades[a];
+            if (i == 0){
+                if (grades.size() == 12){
+                    std::sort(grades[0].begin(), grades[0].end());
+                    // add up first 10 indices (ignore last lowest)
+                    for(int a = 2; a <= grades[0].size(); a++){
+                        total += grades[0][a];
                     }
                 }
 
