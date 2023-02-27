@@ -26,6 +26,25 @@ Example -
 ```
 <!-- Include screenshots to show examples of the program running (SS of how to compile, SS of example input file) -->
 
+### Input File Formatting:
+```
+Data - file_name.txt
+
+999 999 999 999 999 999 999 999 999 999 999 999
+999 999 999 999
+999 999
+999
+```
+
+```
+Structure - file_name.txt
+
+LAB1 LAB2 LAB3 LAB4 LAB5 LAB6 LAB7 LAB8 LAB9 LAB10 LAB11 LAB12
+ASSIGNMENT1 ASSIGNMENT2 ASSIGNMENT3 ASSIGNMENT4
+REVIEWPROJECT FINALPROJECT
+EXAM
+```
+
 ## Planning
 ### Pseudocode / Flowcharts:
 
@@ -166,25 +185,6 @@ $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`
 
 [^4]: This string represents the 'command' variable which identifies what data the user would like to return.
   EXCEPTION: When utilizing the Individual class, the 'command' variable represents the assignment name for the individual grade you wish to return.
-
-### Input File Formatting:
-```
-Data - file_name.txt
-
-999 999 999 999 999 999 999 999 999 999 999 999
-999 999 999 999
-999 999
-999
-```
-
-```
-Structure - file_name.txt
-
-LAB1 LAB2 LAB3 LAB4 LAB5 LAB6 LAB7 LAB8 LAB9 LAB10 LAB11 LAB12
-ASSIGNMENT1 ASSIGNMENT2 ASSIGNMENT3 ASSIGNMENT4
-REVIEWPROJECT FINALPROJECT
-EXAM
-```
 
 ## Sample Input/Output
 <!-- Include screenshots with brief explanations of the images used -->
