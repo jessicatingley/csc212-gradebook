@@ -9,10 +9,11 @@ class Course
 private:
     std::string category;
     std::string command;
-    std::vector<std::vector<int>> grades;
+    std::vector<std::vector<double>> grades;
+    std::vector<std::vector<std::string>> assignment_names;
 
 public:
-    Course(std::string category, std::string command, std::vector<std::vector<int>> grades, std::vector<std::vector<std::string>> assignment_names);
+    Course(std::string category, std::string command, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names);
     std::string AllGrades(std::string category, std::vector<std::vector<double>> grades);
     // case 1 (all grades for every category and course overall totals)
     // command == TOTAL

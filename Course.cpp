@@ -7,14 +7,14 @@
 
 //------------------------------------------------------------------
 
-Course::Course(std::string category, std::string command, std::vector<std::vector<int>> grades)
+Course::Course(std::string category, std::string command, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names)
     : category(category), command(command), grades(grades), assignment_names(assignment_names) {}
 
 // case 1 (all grades for every category and course overall totals)
 // command == TOTAL
 
 // return labs, assignments, projects, exam
-std::string Course::TOTAL(std::string category, std::vector<std::vector<double>> grades)
+std::string Course::TOTAL(std::string category, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names)
 {
     for (int i = 0; i++; i <= 3)
     {
@@ -31,7 +31,7 @@ std::string Course::TOTAL(std::string category, std::vector<std::vector<double>>
 // command == catagory_total
 
 // return catagory totals
-double Course::CATEGORY_TOTAl(std::string category, std::vector<std::vector<double>> grades)
+std::string Course::CATEGORY_TOTAL(std::string category, std::vector<std::vector<double>> grades)
 {
     for (int i = 0; i++; i < 3)
     {
