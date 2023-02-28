@@ -28,8 +28,8 @@ int main(int argc, char* argv[]){
         std::cout << "Usage to update a grade: ./prog <file_name> <UPDATE> <category> <command> <grade>\n";
         std::cout << "\t<category>\tCategory of grade you would like to change\n";
         std::cout << "\t<command>\tName of the assignment you would like to update, to be written with no whitespace\n";
-        std::cout << "Valid types: INDIVIDUAL, CATEGORY, COURSE, UPDATE";
-        std::cout << "Valid categories: LABS, ASSIGNMENTS, PROJECTS, EXAMS";
+        std::cout << "Valid types: INDIVIDUAL, CATEGORY, COURSE, UPDATE\n";
+        std::cout << "Valid categories: LABS, ASSIGNMENTS, PROJECTS, EXAMS\n";
         return 0;
     }
     std::vector<std::vector<double>> grades = FileToVector(argv[1]);
@@ -69,7 +69,7 @@ int main(int argc, char* argv[]){
         std::cout << "Usage to update a grade: ./prog <file_name> <UPDATE> <category> <command> <grade>\n";
         std::cout << "\t<category>\tCategory of grade you would like to change\n";
         std::cout << "\t<command>\tName of the assignment you would like to update, to be written with no whitespace\n";
-        std::cout << "Valid categories: LABS, ASSIGNMENTS, PROJECTS, EXAMS";
+        std::cout << "Valid categories: LABS, ASSIGNMENTS, PROJECTS, EXAMS\n";
         return 0;
     }
 
