@@ -112,7 +112,7 @@ std::string Course::CATEGORYTOTAL(std::vector<std::vector<double>> grades){
                 for (const auto grade : grades[i]) {
                     if (grade != 999) total += grade;
                 }
-                output += "Project total: " + std::to_string(total);
+                output += "Exam total: " + std::to_string(total);
                 output += "\n";
             }
         }
