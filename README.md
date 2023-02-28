@@ -19,7 +19,7 @@ The application utilizes 3 classes - `Individual`, `Category`, and `Course` to p
 ## Compilation Instructions
 **Prefered Method**
 ```
-This program was developed using CLion during compilation and runtime. We reccomend CLion for application use.
+This program was developed using CLion during compilation and runtime. We recommend CLion for application use.
 
 The arguments you must provide in the program configuartion should be input as follows:
 <file name> <type> <category> <command> 

@@ -106,7 +106,7 @@ int main(int argc, char* argv[]){
             return 0;
         }
         std::cout << "Deliverable Name: " << command << std::endl;
-        std::cout << command << "Grade: " << use_individual.GetGrade(category, command, grades) << std::endl;
+        std::cout << command << " Grade: " << use_individual.GetGrade(category, command, grades) << std::endl;
     }
 
     // use case for course class
