@@ -23,7 +23,7 @@ std::ofstream VectorToFile(const std::vector<std::vector<double>>& grade_vec, co
  ------------------------------------------------------------------------------ */
 int main(int argc, char* argv[]){
     if(argc != 5 && argc != 6){
-        std::cout << "You have entered an invalid type.\n";
+        std::cout << "Your input is invalid\n";
         std::cout << "Usage: ./prog <file_name> <type> <category> <command>\n";
         std::cout << "Usage to update a grade: ./prog <file_name> <UPDATE> <category> <command> <grade>\n";
         std::cout << "\t<category>\tCategory of grade you would like to change\n";
