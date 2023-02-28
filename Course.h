@@ -15,8 +15,8 @@ private:
 public:
     Course(std::string category, std::string command, std::vector<std::vector<double>> grades, std::vector<std::vector<std::string>> assignment_names);
     std::string TOTAL(std::vector<std::vector<double>> grades);
-    std::string CATEGORY_TOTAL(std::vector<std::vector<double>> grades);
-    double COURSE_TOTAL(std::vector<std::vector<double>> grades);
+    std::string CATEGORYTOTAL(std::vector<std::vector<double>> grades);
+    double COURSETOTAL(std::vector<std::vector<double>> grades);
 };
 
 #endif

@@ -69,7 +69,7 @@ std::string Course::TOTAL(std::vector<std::vector<double>> grades){
  *          Rows are labeled with their associated category and the associated
  *          total is displayed with this label.
  ------------------------------------------------------------------------------ */
-std::string Course::CATEGORY_TOTAL(std::vector<std::vector<double>> grades){
+std::string Course::CATEGORYTOTAL(std::vector<std::vector<double>> grades){
     std::string output = "";
     for (int i = 0; i <= 3; i++){
         double total = 0;
@@ -128,7 +128,7 @@ std::string Course::CATEGORY_TOTAL(std::vector<std::vector<double>> grades){
  * Process: Each vector within the 2D vector is iterated over. Each grade in the
  *          inner vector is added to a running total for the course.
  ------------------------------------------------------------------------------ */
-double Course::COURSE_TOTAL(std::vector<std::vector<double>> grades){
+double Course::COURSETOTAL(std::vector<std::vector<double>> grades){
     double total = 0;
     for (const auto category : grades){
         for (const auto grade : category){
