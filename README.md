@@ -188,17 +188,14 @@ $ ./prog `file_name.txt`[^1] `CATEGORY`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAN
     
 **The necessary command line arguments for utilizing the `Course` class will be input as follows:**  
 $ ./prog `file_name.txt`[^1] `COURSE`[^2] `CATEGORY_OF_ASSIGNMENT`[^3] `COMMAND`[^4]    
-    <br /> Valid inputs for `CATEGORY_OF_ASSIGNMENT`:    
-    - 'labs'   
-    - 'ASSIGNMENTS'     
-    - 'Projects'     
-    - 'EXAMS'      
+    <br /> ONLY Valid input for `CATEGORY_OF_ASSIGNMENT`:    
+    - 'ALL'      
     Examples of valid inputs for `COMMAND`:     
     - 'Total'   
     - 'CATEGORYTOTAL'   
     - 'CourseTotal'     
-    Important notes:     
-    A valid `COMMAND` ***must*** be given when type 'COURSE' is used.       
+    Important notes:
+    A valid `COMMAND` ***must*** be given when type 'COURSE' is used.
     No spaces should be left in input for `COMMAND` <br />
     	- i.e. entering 'COURSE TOTAL' for `COMMAND` would be invalid.
     If input is invalid, the program will break with an assert.
