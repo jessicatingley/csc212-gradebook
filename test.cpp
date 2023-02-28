@@ -2,7 +2,6 @@
 #include "Category.h"
 #include "Course.h"
 #include <iostream>
-#include <sstream>
 #include <vector>
 #include <cassert>
 
@@ -183,13 +182,5 @@ void TestTotal(){
                                         "Projects: 90.9 30.6\n"
                                         "Exam: 100");
 
-
-};
-
-void TestCourseTotals(){
-
-};
-
-void TestCourseOverall(){
 
 };
