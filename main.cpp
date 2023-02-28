@@ -62,7 +62,7 @@ int main(int argc, char* argv[]){
         return 0;
     }
 
-    std::vector<std::string> valid_categories = {"LABS", "ASSIGNMENTS", "PROJECTS", "EXAMS"};
+    std::vector<std::string> valid_categories = {"LABS", "ASSIGNMENTS", "PROJECTS", "EXAMS", "ALL"};
     if(std::find(valid_categories.begin(), valid_categories.end(), category) == valid_categories.end()){
         std::cout << "You have entered an invalid category.\n";
         std::cout << "Usage: ./prog <file_name> <type> <category> <command>\n";
